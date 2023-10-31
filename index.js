@@ -28,7 +28,7 @@ const questions = [
         type: 'input',
         name: 'logoShape',
         message: 'What shape would you want your logo to be? Select from the options below',
-        choices: ['Circle, Square, Triange'],
+        choices: ['Circle, Square, Triangle'],
     },
     {
         type: 'input',
@@ -45,3 +45,9 @@ function init() {
         writeToFile(response)
     });
 };
+
+// Generating logo based on user input
+
+function writeToFile(response) {
+    fs.writeFile('./')
+}
