@@ -36,3 +36,12 @@ const questions = [
         message: 'What color would you want your shape to be?',
     },
 ];
+
+// Initializing inquirer questions for user input
+
+function init() {
+    inquirer.prompt(questions)
+    .then((response) => {
+        writeToFile(response)
+    });
+};
