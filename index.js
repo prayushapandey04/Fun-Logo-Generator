@@ -42,7 +42,13 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((response) => {
-        writeToFile(response)
+        const selectedShape = createSelectedShape(responses);
+        if (selectedShape) {
+            const svgInfo = selectedShape.render();
+            writeToFile('logo.svg', svgInfo);
+        } else {
+            console.log('Error');
+        }
     });
 };
 
