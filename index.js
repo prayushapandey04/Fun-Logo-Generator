@@ -28,7 +28,7 @@ const questions = [
         type: 'input',
         name: 'logoShape',
         message: 'What shape would you want your logo to be? Select from the options below',
-        choices: ['Circle, Square, Triangle'],
+        choices: ['Circle', 'Square', 'Triangle'],
     },
     {
         type: 'input',
@@ -42,7 +42,7 @@ const questions = [
 function init() {
     inquirer.prompt(questions)
     .then((response) => {
-        const selectedShape = createSelectedShape(responses);
+        const selectedShape = createSelectedShape(response);
         if (selectedShape) {
             const svgInfo = selectedShape.render();
             writeToFile('logo.svg', svgInfo);
