@@ -52,6 +52,21 @@ function init() {
     });
 };
 
+function createSelectedShape(response) {
+    let selectedShape;
+
+    if (response.logoShape === 'Circle') {
+        selectedShape = new Circle(response.text, response.textColor, response.shapeColor);
+    } else if (response.logoShape === 'Square') {
+        selectedShape = new Square(response.text, response.textColor, response.shapeColor);
+    } else if (response.logoShape === 'Triangle') {
+        selectedShape = new Triangle(response.text, response.textColor, response.shapeColor);
+    }
+
+    return selectedShape;
+}
+
+
 // Generating logo based on user input
 
 function writeToFile(response) {
