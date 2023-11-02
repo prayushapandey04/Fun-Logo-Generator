@@ -72,5 +72,8 @@ function createSelectedShape(response) {
 // Generating logo based on user input
 
 function writeToFile(response) {
-    fs.writeFile('./')
+    fs.writeFile('./examples/logo.svg', createSelectedShape(response), (err) =>
+    err ? console.log(err) : console.log('Generated SVG Logo!'))
 }
+
+init();
