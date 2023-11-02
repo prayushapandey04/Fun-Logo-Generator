@@ -52,6 +52,8 @@ function init() {
     });
 };
 
+// Function to create shape based on what the user selects
+
 function createSelectedShape(response) {
     let selectedShape;
 
