@@ -83,4 +83,17 @@ function writeToFile(filename, response) {
     }
 }
 
-writeToFile('logo.svg', response);
+function init() {
+    inquirer.prompt(questions)
+        .then((response) => {
+            const selectedShape = createdSelectedShape(response);
+            if (selectedShape) {
+                const svgInfo = selectedShape.render();
+                writeToFile('logo.svg', response);
+            } else {
+                console.log('Error');
+            }
+        });
+}
+
+init();
