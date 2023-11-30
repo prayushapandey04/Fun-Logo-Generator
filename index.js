@@ -25,7 +25,7 @@ const questions = [
         message: 'What color would you like the text of your logo to be?',
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'logoShape',
         message: 'What shape would you want your logo to be? Select from the options below',
         choices: ['Circle', 'Square', 'Triangle'],
